@@ -138,7 +138,7 @@ void* slavesocket_work(void* pSocketData)
     //std::cout << "Response is = \r\n" << response << std::endl;
     send_response(&socketData, &response);
     close(socketData.socketfd);
-    free(&socketData);
+    //free(&socketData);
     return NULL;
 }
 
@@ -199,7 +199,9 @@ int main(int argc, char** argv)
             break;
 
             case 'p':
-            //std::cout << "port saved" << std::endl;
+            std::cout << "port saved" << std::endl;
+            std::cout << "port is " << optarg << std::endl;
+
             raw_port = optarg;
             break;
 
@@ -211,7 +213,7 @@ int main(int argc, char** argv)
         }
     }
     //do_daemon_things();
-    daemon(1,0);
+    //daemon(1,0);
     int MasterSocket = socket(AF_INET, SOCK_STREAM, 0);
     int port = atoi(&raw_port[0]);
     //char host[sizeof(struct in_addr)];
