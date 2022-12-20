@@ -22,6 +22,10 @@
 #include <sys/socket.h>
 #include <arpa/inet.h>
 #include <sys/stat.h>
+#include <string>
+
+
+
 
 int set_non_block(int fd){
     int flags;
