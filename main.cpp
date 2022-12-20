@@ -48,7 +48,10 @@ std::string WORKING_DIRECTORY;
 
 int parse_http(std::string* message, std::string* filePath){
     size_t start_of_path = message->find_first_of(' ') + 1;
-    size_t end_of_path = message->find_first_of(' ', start_of_path);
+    // char* coc[2];
+    // *coc[0] = ' ';
+    // *coc[1] = '?';
+    size_t end_of_path = message->find_first_of(" ?", start_of_path);
     *filePath = message->substr(start_of_path, end_of_path - start_of_path);
     //std::string* pFilePath = (std::string*)malloc(filePath.size());
     //*pFilePath = filePath.substr(0);
@@ -87,7 +90,7 @@ int create_response(std::string* fullPath,std::string* response)
         response->append("Content-Type: text/html\r\n\r\n");
         //response->append() "\r\n\r\n";
     }
-
+    input.close();
     return 0;
 }
 
