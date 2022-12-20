@@ -137,6 +137,8 @@ void* slavesocket_work(void* pSocketData)
     create_response(&fullPath, &response);
     //std::cout << "Response is = \r\n" << response << std::endl;
     send_response(&socketData, &response);
+    close(socketData.socketfd);
+    free(&socketData);
     return NULL;
 }
 
