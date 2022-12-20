@@ -1,0 +1,3 @@
+/home/nikolay/scripts/final/CMakeFiles/final.dir
+/home/nikolay/scripts/final/CMakeFiles/edit_cache.dir
+/home/nikolay/scripts/final/CMakeFiles/rebuild_cache.dir
